@@ -13,7 +13,8 @@ public class UserDaoJDBCImpl implements UserDao {
     }
 
     public void createUsersTable() {
-        String query = "create table Users (" +
+        String table = "Users";
+        String query = "create table " + table + " (" +
                 "id BIGINT primary key auto_increment," +
                 "name VARCHAR(64)," +
                 "lastname VARCHAR(64)," +
@@ -31,7 +32,8 @@ public class UserDaoJDBCImpl implements UserDao {
     }
 
     public void dropUsersTable() {
-        String query = "drop table Users";
+        String table = "Users";
+        String query = "drop table " + table;
         try (Connection connection = Util.getConnection();
                 PreparedStatement prepareStatement = connection.prepareStatement(query)) {
             prepareStatement.execute();
@@ -45,7 +47,8 @@ public class UserDaoJDBCImpl implements UserDao {
     }
 
     public void saveUser(String name, String lastName, byte age) {
-        String query = "insert into Users (name, lastname, age) values (?, ?, ?)";
+        String table = "Users";
+        String query = "insert into " + table + " (name, lastname, age) values (?, ?, ?)";
         try (Connection connection = Util.getConnection();
                 PreparedStatement prepareStatement = connection.prepareStatement(query)) {
             prepareStatement.setString(1, name);
@@ -63,7 +66,8 @@ public class UserDaoJDBCImpl implements UserDao {
     }
 
     public void removeUserById(long id) {
-        String query = "delete from Users where id = ?";
+        String table = "Users";
+        String query = "delete from " + table + " where id = ?";
         try (Connection connection = Util.getConnection();
                 PreparedStatement prepareStatement = connection.prepareStatement(query)) {
             prepareStatement.setLong(1, id);
@@ -74,13 +78,13 @@ public class UserDaoJDBCImpl implements UserDao {
     }
 
     public List<User> getAllUsers() {
+        String table = "Users";
         List<User> userList = new ArrayList<>();
-        String query = "select * from Users";
+        String query = "select * from " + table;
 
         try (Connection connection = Util.getConnection();
                 PreparedStatement prepareStatement = connection.prepareStatement(query);
                 ResultSet rs = prepareStatement.executeQuery()) {
-
             while (rs.next()) {
                 User user = new User(rs.getString("name"),
                         rs.getString("lastName"), rs.getByte("age"));
@@ -98,7 +102,8 @@ public class UserDaoJDBCImpl implements UserDao {
     }
 
     public void cleanUsersTable() {
-        String query = "truncate table Users";
+        String table = "Users";
+        String query = "truncate table " + table;
         try (Connection connection = Util.getConnection();
              PreparedStatement prepareStatement = connection.prepareStatement(query)) {
             prepareStatement.execute();
