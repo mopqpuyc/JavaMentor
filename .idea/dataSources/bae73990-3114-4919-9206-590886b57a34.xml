@@ -1015,36 +1015,9 @@ sys|schema||mysql.sys|localhost|TRIGGER|G</Grants>
       <Engine>InnoDB</Engine>
       <CollationName>utf8_general_ci</CollationName>
     </table>
-    <table id="287" parent="275" name="userstable">
-      <Engine>InnoDB</Engine>
-      <CollationName>utf8_general_ci</CollationName>
-    </table>
-    <column id="288" parent="286" name="next_val">
+    <column id="287" parent="286" name="next_val">
       <DataType>bigint|0s</DataType>
       <Position>1</Position>
     </column>
-    <column id="289" parent="287" name="id">
-      <DataType>bigint|0s</DataType>
-      <NotNull>1</NotNull>
-      <Position>1</Position>
-      <SequenceIdentity>null</SequenceIdentity>
-    </column>
-    <column id="290" parent="287" name="age">
-      <DataType>tinyint|0s</DataType>
-      <Position>2</Position>
-    </column>
-    <column id="291" parent="287" name="lastname">
-      <DataType>varchar(255)|0s</DataType>
-      <Position>3</Position>
-    </column>
-    <column id="292" parent="287" name="name">
-      <DataType>varchar(255)|0s</DataType>
-      <Position>4</Position>
-    </column>
-    <key id="293" parent="287" name="PRIMARY">
-      <ColNames>id</ColNames>
-      <NameSurrogate>1</NameSurrogate>
-      <Primary>1</Primary>
-    </key>
   </database-model>
 </dataSource>
