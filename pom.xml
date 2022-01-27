@@ -48,6 +48,16 @@
             <artifactId>hibernate-core</artifactId>
             <version>5.6.3.Final</version>
         </dependency>
+
+        <!--<dependency>
+            <groupId>Try</groupId>
+            <artifactId>Try</artifactId>
+            <scope>system</scope>
+            <version>1.0</version>
+            <systemPath>${project.basedir}/src/lib/Try.jar</systemPath>
+        </dependency>-->
      </dependencies>
+
+
 
 </project>
