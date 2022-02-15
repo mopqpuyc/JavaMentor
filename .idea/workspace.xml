@@ -6,8 +6,12 @@
   <component name="ChangeListManager">
     <list default="true" id="c3ebe687-dac2-44fd-99bd-40c5d2f8d12a" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/dataSources/bae73990-3114-4919-9206-590886b57a34.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/bae73990-3114-4919-9206-590886b57a34.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/jm/task/core/jdbc/dao/UserDaoHibernateImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/jm/task/core/jdbc/dao/UserDaoHibernateImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/jm/task/core/jdbc/dao/UserDaoJDBCImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/jm/task/core/jdbc/dao/UserDaoJDBCImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/jm/task/core/jdbc/model/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/jm/task/core/jdbc/model/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/jm/task/core/jdbc/service/UserServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/jm/task/core/jdbc/service/UserServiceImpl.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -124,7 +128,21 @@
       <workItem from="1643019075039" duration="4855000" />
       <workItem from="1643106434804" duration="1202000" />
       <workItem from="1643138975389" duration="5507000" />
-      <workItem from="1643305800791" duration="107000" />
+      <workItem from="1643305800791" duration="433000" />
+      <workItem from="1643401248836" duration="32000" />
+      <workItem from="1643465983532" duration="9000" />
+      <workItem from="1643564673123" duration="122000" />
+      <workItem from="1643639028185" duration="606000" />
+      <workItem from="1643797843130" duration="23000" />
+      <workItem from="1643798013245" duration="12000" />
+      <workItem from="1643798253497" duration="91000" />
+      <workItem from="1643798759776" duration="19000" />
+      <workItem from="1644005880368" duration="133000" />
+      <workItem from="1644062301575" duration="12000" />
+      <workItem from="1644580560110" duration="104000" />
+      <workItem from="1644687856960" duration="25000" />
+      <workItem from="1644933867483" duration="230000" />
+      <workItem from="1644946777438" duration="3748000" />
     </task>
     <servers />
   </component>

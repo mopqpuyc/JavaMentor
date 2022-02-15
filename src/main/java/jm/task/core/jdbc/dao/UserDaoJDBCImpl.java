@@ -13,8 +13,7 @@ public class UserDaoJDBCImpl implements UserDao {
     }
 
     public void createUsersTable() {
-        String table = "Users";
-        String query = "create table " + table + " (" +
+        String query = "create table UsersTable (" +
                 "id BIGINT primary key auto_increment," +
                 "name VARCHAR(64)," +
                 "lastname VARCHAR(64)," +
@@ -23,32 +22,22 @@ public class UserDaoJDBCImpl implements UserDao {
                 PreparedStatement prepareStatement = connection.prepareStatement(query)) {
             prepareStatement.execute();
         } catch (SQLException e) {
-            if (e.getErrorCode() == 1050) {
-                System.out.println(e.getMessage());
-            } else {
-                e.printStackTrace();
-            }
+            e.printStackTrace();
         }
     }
 
     public void dropUsersTable() {
-        String table = "Users";
-        String query = "drop table " + table;
         try (Connection connection = Util.getConnection();
-                PreparedStatement prepareStatement = connection.prepareStatement(query)) {
+                PreparedStatement prepareStatement = connection
+                        .prepareStatement("drop table UsersTable")) {
             prepareStatement.execute();
         } catch (SQLException e) {
-            if (e.getErrorCode() == 1051) {
-                System.out.println(e.getMessage());
-            } else {
-                e.printStackTrace();
-            }
+            e.printStackTrace();
         }
     }
 
     public void saveUser(String name, String lastName, byte age) {
-        String table = "Users";
-        String query = "insert into " + table + " (name, lastname, age) values (?, ?, ?)";
+        String query = "insert into UsersTable (name, lastname, age) values (?, ?, ?)";
         try (Connection connection = Util.getConnection();
                 PreparedStatement prepareStatement = connection.prepareStatement(query)) {
             prepareStatement.setString(1, name);
@@ -57,19 +46,14 @@ public class UserDaoJDBCImpl implements UserDao {
             prepareStatement.execute();
             System.out.println("User с именем " + name + " добавлен в базу данных");
         } catch (SQLException e) {
-            if (e.getErrorCode() == 1146) {
-                System.out.println(e.getMessage());
-            } else {
-                e.printStackTrace();
-            }
+            e.printStackTrace();
         }
     }
 
     public void removeUserById(long id) {
-        String table = "Users";
-        String query = "delete from " + table + " where id = ?";
         try (Connection connection = Util.getConnection();
-                PreparedStatement prepareStatement = connection.prepareStatement(query)) {
+                PreparedStatement prepareStatement = connection
+                        .prepareStatement("delete from UsersTable where id = ?")) {
             prepareStatement.setLong(1, id);
             prepareStatement.execute();
         } catch (SQLException e) {
@@ -78,12 +62,10 @@ public class UserDaoJDBCImpl implements UserDao {
     }
 
     public List<User> getAllUsers() {
-        String table = "Users";
         List<User> userList = new ArrayList<>();
-        String query = "select * from " + table;
-
         try (Connection connection = Util.getConnection();
-                PreparedStatement prepareStatement = connection.prepareStatement(query);
+                PreparedStatement prepareStatement = connection
+                        .prepareStatement("select * from UsersTable");
                 ResultSet rs = prepareStatement.executeQuery()) {
             while (rs.next()) {
                 User user = new User(rs.getString("name"),
@@ -92,27 +74,18 @@ public class UserDaoJDBCImpl implements UserDao {
                 userList.add(user);
             }
         } catch (SQLException e) {
-            if (e.getErrorCode() == 1146) {
-                System.out.println(e.getMessage());
-            } else {
-                e.printStackTrace();
-            }
+            e.printStackTrace();
         }
         return userList;
     }
 
     public void cleanUsersTable() {
-        String table = "Users";
-        String query = "truncate table " + table;
         try (Connection connection = Util.getConnection();
-             PreparedStatement prepareStatement = connection.prepareStatement(query)) {
+             PreparedStatement prepareStatement = connection
+                     .prepareStatement("truncate table UsersTable")) {
             prepareStatement.execute();
         } catch (SQLException e) {
-            if (e.getErrorCode() == 1146) {
-                System.out.println(e.getMessage());
-            } else {
-                e.printStackTrace();
-            }
+            e.printStackTrace();
         }
     }
 }
